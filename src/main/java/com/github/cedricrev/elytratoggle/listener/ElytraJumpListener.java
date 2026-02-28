@@ -18,16 +18,16 @@ public class ElytraJumpListener implements PacketListener {
 
         Player player = event.getPlayer();
 
+        if (!player.hasPermission("elytratoggle.use"))
+            return;
+
         WrapperPlayClientPlayerInput packet = new WrapperPlayClientPlayerInput(event);
 
-        if (!packet.isJump())
+        if (!packet.isJump() || !player.isGliding())
             return;
 
         ItemStack chest = player.getInventory().getChestplate();
         if (chest == null || chest.getType() != Material.ELYTRA)
-            return;
-
-        if (!player.isGliding())
             return;
 
         player.setGliding(false);
