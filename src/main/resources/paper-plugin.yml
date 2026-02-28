@@ -1,7 +1,7 @@
 name: ElytraToggle
 version: '1.0.1-SNAPSHOT'
 main: com.github.cedricrev.elytratoggle.ElytraTogglePlugin
-api-version: '1.21.11'
+api-version: '1.21'
 description: Simple bukkit plugin that toggles elytra midflight using jump key, just like in bedrock.
 dependencies:
   server:
@@ -9,3 +9,7 @@ dependencies:
       load: BEFORE
       required: true
       join-classpath: true
+permissions:
+  elytratoggle.use:
+    description: Allows toggling elytra mid-flight
+    default: true
