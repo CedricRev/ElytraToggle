@@ -9,7 +9,7 @@ public final class ElytraTogglePlugin extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        PacketEvents.getAPI().getEventManager().registerListener(new ElytraJumpListener(), PacketListenerPriority.NORMAL);
+        PacketEvents.getAPI().getEventManager().registerListener(new ElytraJumpListener(this), PacketListenerPriority.NORMAL);
     }
 
 }
